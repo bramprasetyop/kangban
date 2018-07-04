@@ -99,14 +99,12 @@ export default {
       let regUser = db.ref(`users/${key}`)
 
       regUser.update({ status: status })
-      
     },
     changeStatus(key, status) {
       // console.log(key);
       let regUser = db.ref(`users/${key}`)
 
       regUser.update({ status: status })
-      
     },
 
     swal() {
@@ -121,7 +119,7 @@ export default {
       regUser
         .push(obj)
         .then(snapshot => {
-          console.log('todo added to database')
+          this.getdata()
         })
         .catch(err => {
           console.log(err)
