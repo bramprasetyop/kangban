@@ -2,103 +2,17 @@
   <div class="navbar">
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Kanban</a>
+        <a href="#" class="brand-logo">Jamban</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li>
-            <!-- <button onclick="document.getElementById('id01').style.display='block'"  class="btn modal-trigger">Add</button> -->
-            <!-- <input v-model="kanban" type="text"> -->
-            <a onclick="document.getElementById('id01').style.display='block'"  style="font-size:24px">Add</a>
           </li>
         </ul>
       </div>
     </nav>
-
-    <!-- ============================================ -->
-    <div class="row">
-      <div class="col s6">
-        
-
-        <div id="id01" class="modal">
-          <form class="modal-content animate" action="/action_page.php">
-            <div class="imgcontainer">
-              <span onclick="document.getElementById('id01').style.display='none'" class="close" >&times;</span>
-            </div>
-
-            <div class="container">
-
-              <label for="uname">
-                <b>Title</b>
-              </label>
-              <input v-model="title" type="text" placeholder="Input here..." name="uname">
-
-              <label for="name">
-                <b>What do you think?</b>
-              </label>
-              <input v-model="body" type="text" placeholder="Input here..." name="name">
-
-              <label for="psw">
-                <b>Status</b>
-              </label>
-              <input v-model= "status" type="text" placeholder="Input with :...plan/ todo/ doing/ done..." name="psw">
-
-              <button onclick="document.getElementById('id01').style.display='none'"  @click="swal()" type="button" >Add</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <!-- ================================================= -->
   </div>
 
 </template>
 
-<script>
-// Get the modal
-var modal = document.getElementById('id01')
-
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = 'none'
-  }
-}
-
-import { db } from '../firebase.js'
-
-export default {
-  data() {
-    return {
-      title:'',
-      status:'',
-      body:''
-    }
-  },
-  methods: {
-    swal() {
-
-        let regUser = db.ref('users')
-
-        let obj = {
-          title:this.title,
-          status:this.status,
-          body:this.body
-          
-        }
-        // localStorage.setItem('kanban', this.kanban)
-        
-        regUser
-          .push(obj)
-          .then(snapshot => {
-            console.log('todo added to database')
-          })
-          .catch(err => {
-            console.log(err)
-          })
-
-    }
-  }
-}
-</script>
 
 <style>
 .navbar {
