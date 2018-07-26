@@ -111,16 +111,20 @@ export default {
       swal('Write Task here:', {
         content: 'input'
       }).then(value => {
-        swal(`You typed: ${value}`);
-        console.log('masuk addtask')
-        const self = this
-        let task = {
-          name: value
+        if (!value) {
+          swal(`Cannot post empty task`)
+        } else {
+          swal(`You typed: ${value}`)
+          console.log('masuk addtask')
+          const self = this
+          let task = {
+            name: value
+          }
+          todo.push(task).then(snapshot => {
+            console.log('push===', snapshot)
+            self.taskName = ''
+          })
         }
-        todo.push(task).then(snapshot => {
-          console.log('push===', snapshot)
-          self.taskName = ''
-        })
       })
     },
     doTask(index) {
