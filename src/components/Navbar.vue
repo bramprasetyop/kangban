@@ -1,37 +1,24 @@
 <template>
-  <div class="navbar">
-    <nav>
-      <div class="nav-wrapper">
-        <a id="yakaligan"  class="brand-logo">Kanban</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <div id="rownavbar" class="row">
+    <div id="titlenav" class="col s5 left">
+      <h3 id="titlekanban" style="text-align:left"><b>Kanban</b></h3>
+    </div>
   </div>
 
 </template>
 
 
 <style>
-.navbar {
+#rownavbar {
   /* border: 1px solid black; */
-  margin-top: -60px;
+  /* margin-top: -60px; */
+  background-color: rgb(250, 85, 118);
+  margin-top: -62px;
 }
-#nav-mobile {
+
+#titlekanban {
   /* border: 1px solid black; */
-  margin-right: 30px;
+  color: white;
+  font-family: cursive
 }
-
-.brand-logo {
-  /* border: 1px solid black; */
-  margin-left: -600px;
-}
-
-#yakaligan{
-  margin-left: -660px;
-}
-
-
 </style>

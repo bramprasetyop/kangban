@@ -2,14 +2,14 @@
   <div class="hello">
     <div class="row">
       <!-- ==================TODO===================== -->
-      <div class="col s4">
+      <div class="col s12 m4 l4">
         <div class="card blue darken-1">
           <div id="inidia" class="card-title white-text">
             <div class="row">
-              <div id="hmm" class="col s9">
-                <h4 style="text-align:center">Todo</h4>
+              <div id="hmm" class="col s9 m10 l10">
+                <h4 id="todotitle" style="text-align:center">Todo</h4>
               </div>
-              <div id="hmm" class="col s3">
+              <div id="hmm" class="col s3 m2 l2">
                 <a @click="swal()" class="btn-floating btn-large waves-effect waves-light magenta right">
                   <i class="material-icons">add</i>
                 </a>
@@ -21,7 +21,7 @@
             <ul>
               <li id="todo-list">
                 <div class="row">
-                  <span class="col s10">
+                  <span class="col s10 m10 l10">
                     {{todo.name}}
                   </span>
                   <button class="btn-floating btn-small waves-effect waves-light red" @click="doTask(index)">
@@ -36,12 +36,12 @@
       </div>
 
       <!-- ==================progress===================== -->
-      <div class="col s4">
+      <div class="col s12 m4 l4">
         <div class="card pink darken-1">
           <div id="inidia" class="card-title white-text">
             <div class="row">
-              <div id="hmm" class="col s12">
-                <h4 style="text-align:center">Progress</h4>
+              <div id="hmm" class="col s12 m12 l12">
+                <h4 id="donetitle" style="text-align:center">Progress</h4>
               </div>
             </div>
           </div>
@@ -49,7 +49,7 @@
             <ul>
               <li id="todo-list">
                 <div class="row">
-                  <span class="col s10">
+                  <span class="col s10 m10 l10">
                     {{progress.name}}
                   </span>
                   <button class="btn-floating btn-small waves-effect waves-light red" @click="completeTask(index)">
@@ -63,12 +63,12 @@
         </div>
       </div>
       <!-- ==================DONE===================== -->
-      <div class="col s4">
+      <div class="col s12 m4 l4">
         <div class="card black darken-1">
           <div id="inidia" class="card-title white-text">
             <div class="row">
-              <div id="hmm" class="col s12">
-                <h4 style="text-align:center">Done</h4>
+              <div id="hmm" class="col s12 m12 l12">
+                <h4 id="progresstitle" style="text-align:center">Done</h4>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@
             <ul>
               <li id="todo-list">
                 <div class="row">
-                  <span class="col s10">
+                  <span class="col s10 m10 l10">
                     {{done.name}}
                   </span>
                   <button class="btn-floating btn-small waves-effect waves-light red" @click="deleteTask(index)">
@@ -178,6 +178,18 @@ export default {
 
 
 <style>
+
+#todotitle{
+  font-family: cursive;
+}
+
+#progresstitle{
+  font-family: cursive;
+}
+
+#donetitle{
+  font-family: cursive;
+}
 #inidia {
   /* border: 1px solid black; */
   margin-top: -20px;
