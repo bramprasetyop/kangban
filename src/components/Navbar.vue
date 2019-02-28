@@ -1,7 +1,7 @@
 <template>
   <div id="rownavbar" class="row">
     <div id="titlenav" class="col s5 left">
-      <h3 id="titlekanban" style="text-align:left"><b>Kanban</b></h3>
+      <img src="../assets/kanban.png" alt="">
     </div>
   </div>
 
@@ -10,15 +10,16 @@
 
 <style>
 #rownavbar {
-  /* border: 1px solid black; */
-  /* margin-top: -60px; */
-  background-color: rgb(250, 85, 118);
+  /* background-color: rgb(179, 173, 174); */
   margin-top: -62px;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.6);
 }
 
-#titlekanban {
-  /* border: 1px solid black; */
-  color: white;
-  font-family: cursive
+img{
+  height: auto;
+  width: 200px;
+  margin-right: 400px;
 }
+
+
 </style>

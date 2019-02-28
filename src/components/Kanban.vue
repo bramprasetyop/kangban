@@ -3,14 +3,14 @@
     <div class="row">
       <!-- ==================TODO===================== -->
       <div class="col s12 m4 l4">
-        <div class="card blue darken-1">
+        <div class="card blue darken-1 borderRadius">
           <div id="inidia" class="card-title white-text">
             <div class="row">
               <div id="hmm" class="col s9 m10 l10">
                 <h4 id="todotitle" style="text-align:center">Todo</h4>
               </div>
               <div id="hmm" class="col s3 m2 l2">
-                <a @click="swal()" class="btn-floating btn-large waves-effect waves-light magenta right">
+                <a @click="swal()" title="Add Another Project">
                   <i class="material-icons">add</i>
                 </a>
               </div>
@@ -37,7 +37,7 @@
 
       <!-- ==================progress===================== -->
       <div class="col s12 m4 l4">
-        <div class="card pink darken-1">
+        <div class="card pink darken-1 borderRadius">
           <div id="inidia" class="card-title white-text">
             <div class="row">
               <div id="hmm" class="col s12 m12 l12">
@@ -64,7 +64,7 @@
       </div>
       <!-- ==================DONE===================== -->
       <div class="col s12 m4 l4">
-        <div class="card black darken-1">
+        <div class="card black darken-1 borderRadius">
           <div id="inidia" class="card-title white-text">
             <div class="row">
               <div id="hmm" class="col s12 m12 l12">
@@ -115,13 +115,11 @@ export default {
           swal(`Cannot post empty task`)
         } else {
           swal(`You typed: ${value}`)
-          console.log('masuk addtask')
           const self = this
           let task = {
             name: value
           }
           todo.push(task).then(snapshot => {
-            console.log('push===', snapshot)
             self.taskName = ''
           })
         }
@@ -162,15 +160,12 @@ export default {
   created() {
     todo.on('value', snapshot => {
       this.todoAll = snapshot.val()
-      console.log(this.todoAll)
     })
     progress.on('value', snapshot => {
       this.progressAll = snapshot.val()
-      console.log(this.progressAll)
     })
     done.on('value', snapshot => {
       this.doneAll = snapshot.val()
-      console.log(this.doneAll)
     })
   }
 }
@@ -178,6 +173,13 @@ export default {
 
 
 <style>
+.borderRadius{
+  border-radius: 5px;
+}
+a{
+  cursor: pointer;
+  color: white;
+}
 
 #todotitle{
   font-family: cursive;
@@ -215,6 +217,9 @@ export default {
 
 #hmm {
   /* border: 1px solid black; */
-  height: 60px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
